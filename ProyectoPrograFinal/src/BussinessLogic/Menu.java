@@ -1,10 +1,11 @@
-package BussinessLogic;
+package BussinessLogic; //Esta línea especifica el nombre del paquete para la clase Java.
 
-import java.util.Scanner;
-import Common.Cliente;
-import Common.Mesa;
+import java.util.Scanner; //Esta línea importa la clase Scanner del paquete java.util. 
+                        //La clase Scanner se utiliza para leer la entrada del usuario desde la consola.
+import Common.Cliente;//Esta línea importa la clase Cliente desde el paquete llamado Common.
+import Common.Mesa; // Esta línea importa la clase Mesa desde el mismo paquete Common
 
-public class Menu {
+public class Menu { //indica que estás declarando una clase pública llamada "Menu". En Java
 
     private Mesa[] vgArregloDeMesas = new Mesa[10]; // declara una variable de instancia llamada vgArregloDeMesas que es
                                                   // un arreglo de objetos de tipo Mesa, con capacidad para almacenar
@@ -26,8 +27,10 @@ public class Menu {
     public void inicializarMesas() { // El método inicializarMesas crea y asigna instancias de la clase Mesa al
                                      // arreglo ArregloDeMesas, llenando el arreglo con mesas predefinidas, cada una
                                      // con un número único y 4 espacios.
-        for (int indice = 0; vgArregloDeMesas.length > indice; indice++) {
-            vgArregloDeMesas[indice] = new Mesa(indice + 1, 4);
+        for (int indice = 0; vgArregloDeMesas.length > indice; indice++) { // Inicia un bucle for que se ejecutará mientras la variable 
+                                                                            //indice sea menor que la longitud del arreglo vgArregloDeMesas.
+            vgArregloDeMesas[indice] = new Mesa(indice + 1, 4); //Asigna una nueva instancia de la clase Mesa al elemento del 
+                                                                                    //arreglo vgArregloDeMesas en la posición indice.
 
         }
     }
@@ -183,6 +186,8 @@ public class Menu {
                 vgArregloDeMesas[indice].setVgCliente(vpCliente);
                 vgArregloDeMesas[indice].setFecha(vpFecha);
                 vgArregloDeMesas[indice].setHora(vpHora);
+
+                MostrarOpciones();
 
                 return;
             }

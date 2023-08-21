@@ -1,7 +1,5 @@
 package Common;
 
-import java.lang.reflect.Constructor;
-
 public class Cliente {
 
     private String vgNombre;
