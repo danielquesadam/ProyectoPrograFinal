@@ -40,7 +40,7 @@ public class Menu { //indica que estás declarando una clase pública llamada "M
         Scanner entrada = new Scanner(System.in);
 
         // Solicitar los valores al usuario
-        String vlUsuario = "";
+        String vlUsuario = ""; //Se declara una variable local llamada vlUsuario de tipo String, asignando el valor inicial de una cadena vacía
         String vlClave = "";
 
         System.out.println("Por favor ingrese sus credenciales");
@@ -50,14 +50,17 @@ public class Menu { //indica que estás declarando una clase pública llamada "M
         vlClave = entrada.next();
 
         Seguridad vlSeguridad = new Seguridad();
+        //Seguridad vlSeguridad: declara una variable llamada vlSeguridad que se utilizará para hacer referencia a un objeto de tipo Seguridad
+        //new Seguridad(): Esta parte del código crea una nueva instancia (objeto) de la clase Seguridad.
 
         Boolean vlResultado = vlSeguridad.buscarPorUsuarioClave(vlUsuario, vlClave);
-
+        // Llama al método llamado buscarPorUsuarioClave en el objeto vlSeguridad, y le pasa dos argumentos: vlUsuario y vlClave
+        // El resultado de esta búsqueda será un valor booleano, es decir, si se encontró el usuario y clave (verdadero) o no (falso).
         if (vlResultado) {
-            System.out.println("Bienvenido!");
+            System.out.println("Bienvenido!"); //Si la variable local es verdadera se imprime el texto y se llama al metodo MostrarOpciones
             MostrarOpciones();
         } else {
-            System.out.println("Credenciales incorrectas!");
+            System.out.println("Credenciales incorrectas!");//Si la variable local es false, imprime el texto
 
         }
 
@@ -69,9 +72,9 @@ public class Menu { //indica que estás declarando una clase pública llamada "M
 
         Scanner entrada = new Scanner(System.in);
 
-        int opcion = 0;
+        int opcion = 0; //Declara la variable  opcion y se le asigna el valor numérico 0.
 
-        do {
+        do {//se inicia un bucle "do", para ejecutar el menu interactivo
 
             System.out.println("=== Menú ===");
             System.out.println("1. Consulta de mesas disponibles");
@@ -80,7 +83,7 @@ public class Menu { //indica que estás declarando una clase pública llamada "M
             System.out.println("4. Salir");
             System.out.print("Elige una opción: ");
 
-            opcion = entrada.nextInt();
+            opcion = entrada.nextInt(); //el número ingresado se almacena en la variable opcion.
 
             switch (opcion) {
                 case 1:
@@ -88,7 +91,7 @@ public class Menu { //indica que estás declarando una clase pública llamada "M
                     break;
                 case 2:
 
-                Cliente vlCliente = new Cliente();
+                Cliente vlCliente = new Cliente(); //Crea una instancia del objeto de la clase Cliente y asignándola a la variable vlCliente
 
                 System.out.print("Ingrese el nombre del cliente: ");
                 String nombre = entrada.next();
@@ -108,10 +111,10 @@ public class Menu { //indica que estás declarando una clase pública llamada "M
                 System.out.print("Ingrese la hora: ");
                 vlHora = entrada.next();
 
-                // Crear el objeto Cliente con los valores ingresados
+                // Crea una instancia del objeto de la clase Cliente y asigna valores específicos a sus atributos
                 vlCliente = new Cliente(nombre, apellido, identificacion, telefono);
 
-                reservarMesa(vlCliente, vlNumeroMesa, vlFecha, vlHora);
+                reservarMesa(vlCliente, vlNumeroMesa, vlFecha, vlHora);//Se llama al método reservarMesa y se pasan los 4 argumentos:
 
                     break;
                 case 3:

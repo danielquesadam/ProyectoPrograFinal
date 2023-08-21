@@ -14,7 +14,7 @@ public class Seguridad {
     // Metodo para cargar usuarios en el sistema
     public void registroDeUsuarios() {
 
-        /** Paso 1 Crear una instancia de la clase usuario */
+        // Se crear una instancia de la clase usuario
         Usuario usuarioAdmin = new Usuario();
         usuarioAdmin.setVgNombreDeUsuario("Admin");
         usuarioAdmin.setVgPassword("123");
