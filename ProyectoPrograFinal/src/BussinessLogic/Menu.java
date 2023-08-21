@@ -118,7 +118,7 @@ public class Menu { //indica que estás declarando una clase pública llamada "M
 
                     break;
                 case 3:
-                    getMesasPorEstado(vgEstadoReservada);
+                    getMesasPorEstado(vgEstadoReservada); //Se llama al metodo getMesasPorEstado
 
                     break;
                 case 4:
@@ -153,18 +153,14 @@ public class Menu { //indica que estás declarando una clase pública llamada "M
 
         /**
          * Paso 1: Creamos un for para recorrer el arregle de mesas -->
-         * vgArregloDeMesas. Este recorrido
-         * tiene el objetivo de buscar y verificar si la mesa seleccionada para la
-         * reserva esta disponible.
+         * tiene el objetivo de buscar y verificar si la mesa seleccionada para la reserva esta disponible.
          */
         for (int indice = 0; vgArregloDeMesas.length > indice; indice++) {
 
             /**
-             * Paso 2: Creamos un condicional por medio de un if para ir verificando cada
-             * posicion del arreglo hasta
-             * encontrar la mesa donde su numero se igual al suministrado por el usuario.
-             * para esto revisamos el arreglo en cada recorrido, ciclo o vuelta del for.
-             * 
+             * Creamos un condicional por medio de un if para ir verificando cada
+             * posicion del arreglo hasta encontrar la mesa donde su numero se igual al suministrado por el usuario.
+             * para esto revisamos el arreglo en cada recorrido del for.
              * Se comparar dos atributos del la mesa numero de mesa y el estado.
              */
 
