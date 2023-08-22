@@ -2,15 +2,14 @@ package Common;
 
 public class Mesa {
 
-
     private int vgNumeroDeLasMesas;
     private int vgCantidadDeLasSillas;
-    
+
     private String vgEstado;
     private Cliente vgCliente;
     private String fecha;
-    private String hora; 
-  
+    private String hora;
+
     public Mesa() {
         vgNumeroDeLasMesas = 0;
         vgCantidadDeLasSillas = 0;

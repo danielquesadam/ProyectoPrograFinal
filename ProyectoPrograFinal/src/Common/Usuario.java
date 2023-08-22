@@ -1,33 +1,33 @@
-package Common;  // Definir el paquete al que pertenece la clase Usuario
+package Common; 
 
-public class Usuario {  // Definir la clase Usuario
+public class Usuario {  
 
-    private String vgNombreDeUsuario;  // Atributo privado para el nombre de usuario
-    private String vgPassword;  // Atributo privado para la contraseña
+    private String vgNombreDeUsuario;  
+    private String vgPassword;  
 
-    public Usuario() {  // Constructor sin argumentos
-        vgNombreDeUsuario = "";  // Inicializa el nombre de usuario con una cadena vacía
-        vgPassword = "";  // Inicializar la contraseña con una cadena vacía
+    public Usuario() { 
+        vgNombreDeUsuario = "";  
+        vgPassword = "";  
     }
 
-    public Usuario(String vpNombreDeUsuario, String vpPassword) {  // Constructor con argumentos
-        this.vgNombreDeUsuario = vpNombreDeUsuario;  // Asignar el valor del parámetro al nombre de usuario
-        this.vgPassword = vpPassword;  // Asignar el valor del parámetro a la contraseña
+    public Usuario(String vpNombreDeUsuario, String vpPassword) {  
+        this.vgNombreDeUsuario = vpNombreDeUsuario;  
+        this.vgPassword = vpPassword;  
     }
 
-    public String getVgNombreDeUsuario() {  // Método para obtener el nombre de usuario
+    public String getVgNombreDeUsuario() {  
         return vgNombreDeUsuario;
     }
 
-    public void setVgNombreDeUsuario(String vgNombreDeUsuario) {  // Método para establecer el nombre de usuario
+    public void setVgNombreDeUsuario(String vgNombreDeUsuario) {  
         this.vgNombreDeUsuario = vgNombreDeUsuario;
     }
 
-    public String getVgPassword() {  // Método para obtener la contraseña
+    public String getVgPassword() {  
         return vgPassword;
     }
 
-    public void setVgPassword(String vgPassword) {  // Método para establecer la contraseña
+    public void setVgPassword(String vgPassword) {  
         this.vgPassword = vgPassword;
     }
 }

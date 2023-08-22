@@ -1,46 +1,37 @@
-package BussinessLogic; //Esta línea especifica el nombre del paquete para la clase Java.
+package BussinessLogic;
 
-import java.util.Scanner; //Esta línea importa la clase Scanner del paquete java.util. 
-                        //La clase Scanner se utiliza para leer la entrada del usuario desde la consola.
-import Common.Cliente;//Esta línea importa la clase Cliente desde el paquete llamado Common.
-import Common.Mesa; // Esta línea importa la clase Mesa desde el mismo paquete Common
+import java.util.Scanner;
 
-public class Menu { //indica que estás declarando una clase pública llamada "Menu". En Java
+import Common.Cliente;
+import Common.Mesa;
 
-    private Mesa[] vgArregloDeMesas = new Mesa[10]; // declara una variable de instancia llamada vgArregloDeMesas que es
-                                                  // un arreglo de objetos de tipo Mesa, con capacidad para almacenar
-                                                  // hasta 10 objetos Mesa
-    final String vgEstadoDisponible = "Disponible"; // define una constante llamada vgEstadoDisponible de tipo String que
-                                                  // tiene un valor fijo y no se puede modificar después de su
-                                                  // inicialización.
-    final String vgEstadoReservada = "Reservada";// lo mismo pero cambia el nombre de la variable y el valor de esta a
-                                               // "Reservada"
+public class Menu {
 
-    public Menu() { // Inicio del metodo
+    private Mesa[] vgArregloDeMesas = new Mesa[10];
 
-        inicializarMesas(); // Llamamos al metodo "inicializarMesas"
+    final String vgEstadoDisponible = "Disponible";
 
-        login(); // Llamamos al metodo login para que el usuario ingrese sus credenciales
+    final String vgEstadoReservada = "Reservada";
+
+    public Menu() {
+
+        inicializarMesas();
+
+        login();
 
     }
 
-    public void inicializarMesas() { // El método inicializarMesas crea y asigna instancias de la clase Mesa al
-                                     // arreglo ArregloDeMesas, llenando el arreglo con mesas predefinidas, cada una
-                                     // con un número único y 4 espacios.
-        for (int indice = 0; vgArregloDeMesas.length > indice; indice++) { // Inicia un bucle for que se ejecutará mientras la variable 
-                                                                            //indice sea menor que la longitud del arreglo vgArregloDeMesas.
-            vgArregloDeMesas[indice] = new Mesa(indice + 1, 4); //Asigna una nueva instancia de la clase Mesa al elemento del 
-                                                                                    //arreglo vgArregloDeMesas en la posición indice.
-
+    public void inicializarMesas() {
+        for (int indice = 0; vgArregloDeMesas.length > indice; indice++) { 
+            vgArregloDeMesas[indice] = new Mesa(indice + 1, 4); 
         }
     }
 
-    public void login() {// Metodo para que el Usuario se logee
+    public void login() {
 
         Scanner entrada = new Scanner(System.in);
 
-        // Solicitar los valores al usuario
-        String vlUsuario = ""; //Se declara una variable local llamada vlUsuario de tipo String, asignando el valor inicial de una cadena vacía
+        String vlUsuario = "";
         String vlClave = "";
 
         System.out.println("Por favor ingrese sus credenciales");
@@ -50,17 +41,14 @@ public class Menu { //indica que estás declarando una clase pública llamada "M
         vlClave = entrada.next();
 
         Seguridad vlSeguridad = new Seguridad();
-        //Seguridad vlSeguridad: declara una variable llamada vlSeguridad que se utilizará para hacer referencia a un objeto de tipo Seguridad
-        //new Seguridad(): Esta parte del código crea una nueva instancia (objeto) de la clase Seguridad.
 
         Boolean vlResultado = vlSeguridad.buscarPorUsuarioClave(vlUsuario, vlClave);
-        // Llama al método llamado buscarPorUsuarioClave en el objeto vlSeguridad, y le pasa dos argumentos: vlUsuario y vlClave
-        // El resultado de esta búsqueda será un valor booleano, es decir, si se encontró el usuario y clave (verdadero) o no (falso).
+
         if (vlResultado) {
-            System.out.println("Bienvenido!"); //Si la variable local es verdadera se imprime el texto y se llama al metodo MostrarOpciones
+            System.out.println("Bienvenido!");
             MostrarOpciones();
         } else {
-            System.out.println("Credenciales incorrectas!");//Si la variable local es false, imprime el texto
+            System.out.println("Credenciales incorrectas!");
 
         }
 
@@ -68,13 +56,13 @@ public class Menu { //indica que estás declarando una clase pública llamada "M
 
     }
 
-    public void MostrarOpciones() { // Inicio metodo para mostrar las opciones del menu en pantalla
+    public void MostrarOpciones() {
 
         Scanner entrada = new Scanner(System.in);
 
-        int opcion = 0; //Declara la variable  opcion y se le asigna el valor numérico 0.
+        int opcion = 0;
 
-        do {//se inicia un bucle "do", para ejecutar el menu interactivo
+        do {
 
             System.out.println("=== Menú ===");
             System.out.println("1. Consulta de mesas disponibles");
@@ -83,7 +71,7 @@ public class Menu { //indica que estás declarando una clase pública llamada "M
             System.out.println("4. Salir");
             System.out.print("Elige una opción: ");
 
-            opcion = entrada.nextInt(); //el número ingresado se almacena en la variable opcion.
+            opcion = entrada.nextInt();
 
             switch (opcion) {
                 case 1:
@@ -91,34 +79,33 @@ public class Menu { //indica que estás declarando una clase pública llamada "M
                     break;
                 case 2:
 
-                Cliente vlCliente = new Cliente(); //Crea una instancia del objeto de la clase Cliente y asignándola a la variable vlCliente
+                    Cliente vlCliente = new Cliente();
 
-                System.out.print("Ingrese el nombre del cliente: ");
-                String nombre = entrada.next();
-                System.out.print("Ingrese el apellido del cliente: ");
-                String apellido = entrada.next();
-                System.out.print("Ingrese la identificación del cliente: ");
-                String identificacion = entrada.next();
-                System.out.print("Ingrese el teléfono del cliente: ");
-                String telefono = entrada.next();
-                int vlNumeroMesa = 0;
-                System.out.print("Ingrese el número de mesa: ");
-                vlNumeroMesa = entrada.nextInt();
-                String vlFecha = "";
-                System.out.print("Ingrese la fecha: ");
-                vlFecha = entrada.next();
-                String vlHora = "";
-                System.out.print("Ingrese la hora: ");
-                vlHora = entrada.next();
+                    System.out.print("Ingrese el nombre del cliente: ");
+                    String nombre = entrada.next();
+                    System.out.print("Ingrese el apellido del cliente: ");
+                    String apellido = entrada.next();
+                    System.out.print("Ingrese la identificación del cliente: ");
+                    String identificacion = entrada.next();
+                    System.out.print("Ingrese el teléfono del cliente: ");
+                    String telefono = entrada.next();
+                    int vlNumeroMesa = 0;
+                    System.out.print("Ingrese el número de mesa: ");
+                    vlNumeroMesa = entrada.nextInt();
+                    String vlFecha = "";
+                    System.out.print("Ingrese la fecha: ");
+                    vlFecha = entrada.next();
+                    String vlHora = "";
+                    System.out.print("Ingrese la hora: ");
+                    vlHora = entrada.next();
 
-                // Crea una instancia del objeto de la clase Cliente y asigna valores específicos a sus atributos
-                vlCliente = new Cliente(nombre, apellido, identificacion, telefono);
+                    vlCliente = new Cliente(nombre, apellido, identificacion, telefono);
 
-                reservarMesa(vlCliente, vlNumeroMesa, vlFecha, vlHora);//Se llama al método reservarMesa y se pasan los 4 argumentos:
+                    reservarMesa(vlCliente, vlNumeroMesa, vlFecha, vlHora);
 
                     break;
                 case 3:
-                    getMesasPorEstado(vgEstadoReservada); //Se llama al metodo getMesasPorEstado
+                    getMesasPorEstado(vgEstadoReservada);
 
                     break;
                 case 4:
@@ -134,8 +121,6 @@ public class Menu { //indica que estás declarando una clase pública llamada "M
         entrada.close();
     }
 
-    // Metodo para obtener las mesas, dependiendo de su estado y mostrarlas en la
-    // opcion del menu.
     public void getMesasPorEstado(String vpEstado) {
         System.out.println("Lista de mesas : " + vpEstado);
 
@@ -150,33 +135,14 @@ public class Menu { //indica que estás declarando una clase pública llamada "M
 
     public void reservarMesa(Cliente vpCliente, int vpNumeroMesa, String vpFecha, String vpHora) {
 
-        /**
-         * Se crea un for para recorrer el arregle de mesas
-         * tiene el objetivo de buscar y verificar si la mesa seleccionada para la reserva esta disponible.
-         */
         for (int indice = 0; vgArregloDeMesas.length > indice; indice++) {
 
-            /**
-             * Creamos un condicional por medio de un if para ir verificando cada
-             * posicion del arreglo hasta encontrar la mesa donde su numero se igual al suministrado por el usuario.
-             * para esto revisamos el arreglo en cada recorrido del for.
-             * Se comparar dos atributos del la mesa numero de mesa y el estado.
-             */
-
-            /**
-             * obtener el valor de la mesa que pertenece al indice del ciclo y
-             * asignarlo a una variable
-             */
             Mesa vlMesaDelCiclo = vgArregloDeMesas[indice];
-            
-            String vlEstado = vlMesaDelCiclo.getVgEstado(); //Para obtener el estado utilizamos el metodo getVgEstado()
-            int vlNumeroMesa = vlMesaDelCiclo.getVgNumeroDeLasMesas(); //Para obtener el numero de mesa utilizamos el metodo getVgNumeroDeMesa */
 
+            String vlEstado = vlMesaDelCiclo.getVgEstado();
+            int vlNumeroMesa = vlMesaDelCiclo.getVgNumeroDeLasMesas();
 
-            if (vlNumeroMesa == vpNumeroMesa && vlEstado.equals(vgEstadoDisponible)) { // Comparamos los valores de la
-                                                                                     // mesa que va en el ciclo contra
-                                                                                     // los parametros suministrados al
-                                                                                     // metodo
+            if (vlNumeroMesa == vpNumeroMesa && vlEstado.equals(vgEstadoDisponible)) {
 
                 System.out.println("La mesa #" + vpNumeroMesa + ", fue reservada de forma exitosa!");
 
