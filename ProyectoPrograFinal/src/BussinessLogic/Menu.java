@@ -128,7 +128,6 @@ public class Menu { //indica que estás declarando una clase pública llamada "M
                     System.out.println("Opción inválida. Inténtalo de nuevo.");
                     break;
             }
-            System.out.println();
 
         } while (opcion != 4);
 
