@@ -22,8 +22,8 @@ public class Menu {
     }
 
     public void inicializarMesas() {
-        for (int indice = 0; vgArregloDeMesas.length > indice; indice++) { 
-            vgArregloDeMesas[indice] = new Mesa(indice + 1, 4); 
+        for (int indice = 0; vgArregloDeMesas.length > indice; indice++) {
+            vgArregloDeMesas[indice] = new Mesa(indice + 1, 4);
         }
     }
 
@@ -150,8 +150,6 @@ public class Menu {
                 vgArregloDeMesas[indice].setVgCliente(vpCliente);
                 vgArregloDeMesas[indice].setFecha(vpFecha);
                 vgArregloDeMesas[indice].setHora(vpHora);
-
-                MostrarOpciones();
 
                 return;
             }
