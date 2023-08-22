@@ -152,7 +152,7 @@ public class Menu { //indica que estás declarando una clase pública llamada "M
     public void reservarMesa(Cliente vpCliente, int vpNumeroMesa, String vpFecha, String vpHora) {
 
         /**
-         * Paso 1: Creamos un for para recorrer el arregle de mesas -->
+         * Se crea un for para recorrer el arregle de mesas
          * tiene el objetivo de buscar y verificar si la mesa seleccionada para la reserva esta disponible.
          */
         for (int indice = 0; vgArregloDeMesas.length > indice; indice++) {
@@ -165,7 +165,7 @@ public class Menu { //indica que estás declarando una clase pública llamada "M
              */
 
             /**
-             * Paso 2.1 obtener el valor de la mesa que pertenece al indice del ciclo y
+             * obtener el valor de la mesa que pertenece al indice del ciclo y
              * asignarlo a una variable
              */
             Mesa vlMesaDelCiclo = vgArregloDeMesas[indice];

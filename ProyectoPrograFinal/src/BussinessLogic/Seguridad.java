@@ -32,9 +32,9 @@ public class Seguridad {
         arregloUsuarios[4] = usuarioClienteAndrey;
     }
 
-    public boolean buscarPorUsuarioClave(String vpUsuario, String vpClave) { // * Se declara un método llamado
+    public boolean buscarPorUsuarioClave(String vpUsuario, String vpClave) { // Se declara un método llamado
                                                                              // buscarUsuarioPorUsuarioClave que toma
-                                                                             // dos* parámetros:* vpUsuario y vpClave.
+                                                                             // dos parámetros: vpUsuario y vpClave.
 
         for (int indice = 0; indice < arregloUsuarios.length; indice++) {
 
